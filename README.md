@@ -221,11 +221,16 @@ DB_PASSWORD=your_password
 ## Start Application
 
 ```bash
+docker network rm insurance-network
+docker network create insurance-network
+
 cd .\calculation-service
-docker compose up --build
+docker compose down
+docker compose up --build -d
 
 cd .\application-service
-docker compose up --build
+docker compose down
+docker compose up --build -d
 ```
 
 ---
