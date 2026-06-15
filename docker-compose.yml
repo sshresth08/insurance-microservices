@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  calculation-service:
+    build:
+      context: ./calculation-service
+    container_name: calculation-service
+    ports:
+      - "8081:8081"
+
+  application-service:
+    build:
+      context: ./application-service
+    container_name: application-service
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./application-service/.env
+    depends_on:
+      - calculation-service
