@@ -221,6 +221,10 @@ DB_PASSWORD=your_password
 ## Start Application
 
 ```bash
+cd .\calculation-service
+docker compose up --build
+
+cd .\application-service
 docker compose up --build
 ```
 
